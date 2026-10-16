@@ -8,18 +8,18 @@ class ModalidadeAdmin(admin.ModelAdmin):
     ordering = ["nome"]
 
 @admin.register(Equipe)
-class ModalidadeAdmin(admin.ModelAdmin):
+class EquipeAdmin(admin.ModelAdmin):
     list_display = ["nome", "curso", "cor", "criada_em"]
     ordering = ["nome"]
 
 
 @admin.register(Tecnico)
-class ModalidadeAdmin(admin.ModelAdmin):
+class TecnicoAdmin(admin.ModelAdmin):
     list_display = ["nome", "email", "telefone"]
     ordering = ["nome"]
 
 
 @admin.register(Atleta)
-class ModalidadeAdmin(admin.ModelAdmin):
+class AtletaAdmin(admin.ModelAdmin):
     list_display = ["nome", "matricula", "data_nascimento"]
     ordering = ["nome"]

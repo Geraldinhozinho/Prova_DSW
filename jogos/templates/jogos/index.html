@@ -1,0 +1,83 @@
+
+
+
+{% extends 'base.html' %}
+
+{% block main %}
+    <main class="conteudo">
+        <header class="topo">
+            <span class="sobretitulo">Jogos Interclasses 2026</span>
+            <h1>Equipes inscritas</h1>
+            <p class="descricao">Conheça as equipes que disputam os Jogos Interclasses do campus.</p>
+        </header>
+
+        <div class="busca">
+            <label for="busca">Buscar equipe</label>
+            <input type="search" id="busca" placeholder="Digite o nome da equipe">
+        </div>
+
+        <section class="grade" id="lista-equipes">
+            <article class="card" style="border-top-color: #d97706;">
+                <h3>Carcarás</h3>
+                <dl>
+                    <dt>Curso</dt>
+                    <dd>Apicultura · 2º ano</dd>
+                    <dt>Técnico</dt>
+                    <dd>José Wellington Souza</dd>
+                    <dt>Atletas</dt>
+                    <dd>3</dd>
+                </dl>
+                <a class="link" href="{% url 'equipe' %}">Ver equipe</a>
+            </article>
+
+            <article class="card" style="border-top-color: #c8102e;">
+                <h3>Fênix</h3>
+                <dl>
+                    <dt>Curso</dt>
+                    <dd>Informática · 3º ano</dd>
+                    <dt>Técnico</dt>
+                    <dd>Marcos Pereira</dd>
+                    <dt>Atletas</dt>
+                    <dd>4</dd>
+                </dl>
+                <a class="link" href="{% url 'equipe' %}">Ver equipe</a>
+            </article>
+
+            <article class="card" style="border-top-color: #7c3aed;">
+                <h3>Lobos</h3>
+                <dl>
+                    <dt>Curso</dt>
+                    <dd>Informática · 1º ano</dd>
+                    <dt>Técnico</dt>
+                    <dd>não definido</dd>
+                    <dt>Atletas</dt>
+                    <dd>0</dd>
+                </dl>
+                <a class="link" href="{% url 'equipe' %}">Ver equipe</a>
+            </article>
+
+            <article class="card" style="border-top-color: #1d4ed8;">
+                <h3>Tubarões</h3>
+                <dl>
+                    <dt>Curso</dt>
+                    <dd>Alimentos · 2º ano</dd>
+                    <dt>Técnico</dt>
+                    <dd>Ana Beatriz Lima</dd>
+                    <dt>Atletas</dt>
+                    <dd>4</dd>
+                </dl>
+                <a class="link" href="{% url 'equipe' %}">Ver equipe</a>
+            </article>
+        </section>
+
+        <p class="sem-resultado" id="sem-resultado" hidden>Nenhuma equipe encontrada.</p>
+
+        <h2>Modalidades</h2>
+        <ul class="lista-modalidades">
+            <li><a href="{% url 'modalidade' %}">Atletismo 100 m</a></li>
+            <li><a href="{% url 'modalidade' %}">Futsal</a></li>
+            <li><a href="{% url 'modalidade' %}">Voleibol</a></li>
+            <li><a href="{% url 'modalidade' %}">Xadrez</a></li>
+        </ul>
+    </main>
+{% endblock %}
