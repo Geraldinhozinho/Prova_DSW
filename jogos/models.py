@@ -27,8 +27,8 @@ class Equipe(models.Model):
     curso = models.CharField(max_length=100)
     cor = models.CharField(max_length=7)
     criada_em = models.DateTimeField(auto_now_add=timezone.now())
-    # atletas = models.ForeignKey('Atleta', on_delete=models.PROTECT, related_name="atletas")
-    # tecnico = models.OneToOneField('Tecnico', on_delete=models.CASCADE, related_name="tecnico")
+    tecnico = models.OneToOneField('Tecnico', on_delete=models.CASCADE, related_name="tecnico")
+    
 
 
     class Meta:
@@ -54,7 +54,9 @@ class Atleta(models.Model):
     nome = models.CharField(max_length=100)
     matricula = models.CharField(max_length=100, unique=True)
     data_nascimento = models.DateField()
-    # modalidades = models.ManyToManyField(Modalidade, null=True, blank=True, related_name="modalidades")
+    equipe = models.ForeignKey(Equipe, on_delete=models.PROTECT, related_name="equipe")
+    modalidades = models.ManyToManyField(Modalidade, null=True, blank=True, related_name="modalidades")
+    
 
 
     class Meta:
@@ -64,4 +66,4 @@ class Atleta(models.Model):
     def __str__(self):
             return self.nome
 
-
+# atletas = models.ForeignKey('Atleta', on_delete=models.PROTECT, related_name="atletas")
